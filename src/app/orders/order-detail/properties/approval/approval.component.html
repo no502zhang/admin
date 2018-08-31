@@ -1,0 +1,20 @@
+<form nz-form>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="property.internal">内务审核</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input nz-input name="property.internal" type="text" [(ngModel)]="property.internal" placeholder="internal">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="property.risk">风控审核</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input nz-input name="property.risk" type="text" [(ngModel)]="property.risk" placeholder="risk">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="property.manager">总经理</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input nz-input name="property.manager" type="text" [(ngModel)]="property.manager" placeholder="manager">
+    </nz-form-control>
+  </nz-form-item>
+</form>
