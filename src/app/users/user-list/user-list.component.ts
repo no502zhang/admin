@@ -10,7 +10,7 @@ import { UserService } from '../shared/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: User[];
+  users: User[] = [];
 
   constructor(private userService: UserService) { }
 

@@ -10,7 +10,7 @@ import { OrderService } from '../shared/order.service';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  orders: Order[];
+  orders: Order[] = [];
 
   constructor(private orderService: OrderService) { }
 
