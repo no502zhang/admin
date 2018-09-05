@@ -12,6 +12,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DefaultDashboardComponent },
       { path: 'orders', loadChildren: './orders/orders.module#OrdersModule' },
+      { path: 'users', loadChildren: './users/users.module#UsersModule' },
     ],
   },
 ];
