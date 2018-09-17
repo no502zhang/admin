@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { User } from '../shared/user.model';
 
@@ -10,20 +11,33 @@ import { UserService } from '../shared/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: User[] = [];
+  searchForm: FormGroup;
 
-  constructor(private userService: UserService) { }
+  users: User[] = [];
+  nzTotal = 0;
+  nzPageIndex = 1;
+  nzPageSize = 10;
+
+  constructor(private userService: UserService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getUsers();
+    this.searchForm = this.formBuilder.group({
+      searchKey: []
+    });
   }
 
   getUsers(): void {
     this.userService.getUsers().subscribe(page => {
-      console.log(page);
-      console.log(page.list)
       this.users = page.list;
-      console.log(this.users);
+      this.nzTotal = page.total;
+      this.nzPageIndex = page.pageNum;
+      this.nzPageSize = page.pageSize;
     });
+  }
+
+  search(): void {
+    for (const i in this.searchForm.controls) {
+    }
   }
 }

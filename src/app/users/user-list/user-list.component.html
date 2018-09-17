@@ -1,4 +1,23 @@
-<nz-table #basicTable [nzData]="users">
+<div nz-row nzType="flex" nzJustify="space-between">
+  <div nz-col nzSpan="12">
+    <form nz-form nzLayout="inline" [formGroup]="searchForm" (ngSubmit)="search()">
+      <nz-form-item>
+        <nz-form-control>
+          <input formControlName="searchKey" nz-input placeholder="搜索条件">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary">搜索</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+  <div nz-col nzSpan="2">
+    <button nz-button (click)="add()">新增</button>
+  </div>
+</div>
+<nz-table #basicTable [nzData]="users" [nzTotal]="">
   <thead>
     <tr>
       <th>用户名</th>

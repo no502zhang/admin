@@ -20,7 +20,23 @@ export class UserService {
   }
 
   getUser(id: number): Observable<User> {
+    console.log(id);
     this.messageService.add('UserService: getOrder');
     return this.http.get<User>('/system/users/' + id);
+  }
+
+  addUser(user: User): Observable<User> {
+    console.log(user);
+    return this.http.post<User>('/system/users/', user)
+  }
+
+  updateUser(user: User): Observable<User> {
+    console.log(user);
+    return this.http.put<User>('/system/users/', user)
+  }
+
+  deleteUser(id: number): Observable<User> {
+    console.log(id);
+    return this.http.delete<User>('/system/users/' + id)
   }
 }

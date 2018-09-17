@@ -1,0 +1,9 @@
+<h2>用户[{{ user.name }}]</h2>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name">用户名</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="name" id="name">
+    </nz-form-control>
+  </nz-form-item>
+</form>
