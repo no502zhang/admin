@@ -37,7 +37,6 @@ export class UserListComponent implements OnInit {
   }
 
   search(): void {
-    for (const i in this.searchForm.controls) {
-    }
+    this.getUsers();
   }
 }

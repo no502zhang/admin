@@ -32,7 +32,7 @@ export class UserService {
 
   updateUser(user: User): Observable<User> {
     console.log(user);
-    return this.http.put<User>('/system/users/', user)
+    return this.http.put<User>('/system/users/' + user.id, user)
   }
 
   deleteUser(id: number): Observable<User> {
