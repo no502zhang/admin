@@ -35,8 +35,8 @@ export class UserService {
     return this.http.put<User>('/system/users/' + user.id, user)
   }
 
-  deleteUser(id: number): Observable<User> {
+  deleteUser(id: number): Observable<boolean> {
     console.log(id);
-    return this.http.delete<User>('/system/users/' + id)
+    return this.http.delete<boolean>('/system/users/' + id)
   }
 }

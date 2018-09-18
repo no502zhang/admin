@@ -27,13 +27,19 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  getUsers(): void {
+  getUsers() {
     this.userService.getUsers().subscribe(page => {
       this.users = page.list;
       this.nzTotal = page.total;
       this.nzPageIndex = page.pageNum;
       this.nzPageSize = page.pageSize;
     });
+  }
+
+  delete(id) {
+    this.userService.deleteUser(id).subscribe(boolean => {
+      console.log(boolean);
+    })
   }
 
   search(): void {
