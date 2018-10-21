@@ -21,37 +21,59 @@ const approvalPropertyComponentInfo: OrderPropertyType = { name: '审核情况',
 
 const initBuyer: OrderBuyer = {
     type: buyerPropertyComponentInfo,
-    name: '',
-    identityNumber: '',
-    mobile: '',
-    address: ''
+    name: null,
+    sex: null,
+    age: null,
+    identityNumber: null,
+    mobile: null,
+    phone: null,
+    email: null,
+    address: null,
+    marital: null,
+    education: null,
+    company: null,
+    companyPhone: null,
+    wageIncome: null,
+    otherIncome: null
 };
 const initSeller: OrderSeller = {
     type: sellerPropertyComponentInfo,
-    name: '',
-    identityNumber: '',
-    mobile: '',
-    address: ''
+    name: null,
+    sex: null,
+    age: null,
+    identityNumber: null,
+    mobile: null,
+    phone: null,
+    email: null,
+    address: null,
+    marital: null,
+    education: null
 };
 const initEstate: Estate = {
     type: estatePropertyComponentInfo,
-    certificateNumber: '', position: ''
+    estateNumber: null,
+    address: null,
+    penny: null,
+    downPayments: null,
+    transactionPrice: null,
+    loans: null,
+    loanTerm: null
 };
 const initRemark: Remark = {
     type: remarkPropertyComponentInfo,
-    content: ''
+    content: null
 };
 const initApproval: Approval = {
     type: approvalPropertyComponentInfo,
-    internal: '',
-    risk: '',
-    manager: ''
+    internal: null,
+    risk: null,
+    manager: null
 };
 
 export const ORDER_INIT: Order = {
-    id: 0,
-    number: '',
-    status: 0,
+    id: null,
+    number: null,
+    status: null,
 
     type: quickOrder,
 
@@ -63,49 +85,103 @@ export const ORDER_INIT: Order = {
 const buyerZhangsan: OrderBuyer = {
     type: buyerPropertyComponentInfo,
     name: '张三',
-    identityNumber: '',
-    mobile: '',
-    address: ''
+    sex: null,
+    age: null,
+    identityNumber: null,
+    mobile: null,
+    phone: null,
+    email: null,
+    address: null,
+    marital: null,
+    education: null,
+    company: null,
+    companyPhone: null,
+    wageIncome: null,
+    otherIncome: null
 };
 const buyerLisi: OrderBuyer = {
     type: buyerPropertyComponentInfo,
     name: '李四',
-    identityNumber: '',
-    mobile: '',
-    address: ''
+    sex: null,
+    age: null,
+    identityNumber: null,
+    mobile: null,
+    phone: null,
+    email: null,
+    address: null,
+    marital: null,
+    education: null,
+    company: null,
+    companyPhone: null,
+    wageIncome: null,
+    otherIncome: null
 };
 const buyerWangwu: OrderBuyer = {
     type: buyerPropertyComponentInfo,
     name: '王五',
-    identityNumber: '',
-    mobile: '',
-    address: ''
+    sex: null,
+    age: null,
+    identityNumber: null,
+    mobile: null,
+    phone: null,
+    email: null,
+    address: null,
+    marital: null,
+    education: null,
+    company: null,
+    companyPhone: null,
+    wageIncome: null,
+    otherIncome: null
 };
 const sellerLisi: OrderSeller = {
     type: sellerPropertyComponentInfo,
     name: '李四',
-    identityNumber: '',
-    mobile: '',
-    address: ''
+    sex: null,
+    age: null,
+    identityNumber: null,
+    mobile: null,
+    phone: null,
+    email: null,
+    address: null,
+    marital: null,
+    education: null
 };
 const sellerWangwu: OrderSeller = {
     type: sellerPropertyComponentInfo,
     name: '王五',
-    identityNumber: '',
-    mobile: '',
-    address: ''
+    sex: null,
+    age: null,
+    identityNumber: null,
+    mobile: null,
+    phone: null,
+    email: null,
+    address: null,
+    marital: null,
+    education: null
 };
 const dongguanEstate: Estate = {
     type: estatePropertyComponentInfo,
-    certificateNumber: 'S12345', position: '东莞市'
+    estateNumber: 'S12345',
+    address: '东莞市',
+    penny: null,
+    downPayments: null,
+    transactionPrice: null,
+    loans: null,
+    loanTerm: null
 };
 const guangzhouEstate: Estate = {
     type: estatePropertyComponentInfo,
-    certificateNumber: 'A12345', position: '广州市'
+    estateNumber: 'A12345',
+    address: '广州市',
+    penny: null,
+    downPayments: null,
+    transactionPrice: null,
+    loans: null,
+    loanTerm: null
 };
 const nullRemark: Remark = {
     type: remarkPropertyComponentInfo,
-    content: ''
+    content: null
 };
 
 export const ORDERS: Order[] = [
