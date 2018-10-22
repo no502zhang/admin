@@ -2,26 +2,58 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+// delon
+import { AlainThemeModule } from '@delon/theme';
+import { DelonABCModule } from '@delon/abc';
+import { DelonACLModule } from '@delon/acl';
+import { DelonFormModule } from '@delon/form';
 
-import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
-import { registerLocaleData } from '@angular/common';
-import zh from '@angular/common/locales/zh';
+// region: third libs
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { CountdownModule } from 'ngx-countdown';
+const THIRDMODULES = [
+  NgZorroAntdModule,
+  CountdownModule
+];
+// endregion
 
-registerLocaleData(zh);
-
-import { MessagesComponent } from './messages/messages.component';
+// region: your componets & directives
+const COMPONENTS = [];
+const DIRECTIVES = [];
+// endregion
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
+    AlainThemeModule.forChild(),
+    DelonABCModule,
+    DelonACLModule,
+    DelonFormModule,
+    // third libs
+    ...THIRDMODULES
+  ],
+  declarations: [
+    // your components
+    ...COMPONENTS,
+    ...DIRECTIVES
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    NgZorroAntdModule.forRoot()
-  ],
-  declarations: [MessagesComponent],
-  exports: [MessagesComponent, CommonModule, FormsModule, ReactiveFormsModule, RouterModule, HttpClientModule, NgZorroAntdModule],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }]
+    AlainThemeModule,
+    DelonABCModule,
+    DelonACLModule,
+    DelonFormModule,
+    // third libs
+    ...THIRDMODULES,
+    // your components
+    ...COMPONENTS,
+    ...DIRECTIVES
+  ]
 })
 export class SharedModule { }

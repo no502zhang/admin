@@ -1,7 +1,0 @@
-<h2>订单[{{ order.number }}]</h2>
-<orders-flow [flow]="order.type.flow" ></orders-flow> 
-<nz-tabset>
-  <nz-tab nzTitle="{{ property.type.name }}" *ngFor="let property of order.properties">
-    <orders-property-template [property]="property"></orders-property-template>
-  </nz-tab>
-</nz-tabset>
