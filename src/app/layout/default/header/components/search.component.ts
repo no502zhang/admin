@@ -1,16 +1,21 @@
-import { Component, HostBinding, Input, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  Input,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 
 @Component({
   selector: 'header-search',
   template: `
   <nz-input-group nzAddOnBeforeIcon="anticon anticon-search">
     <input nz-input [(ngModel)]="q" (focus)="qFocus()" (blur)="qBlur()"
-      [placeholder]="'搜索：员工、文件、照片等'">
+      [placeholder]="'menu.search.placeholder' | translate">
   </nz-input-group>
-  `
+  `,
 })
 export class HeaderSearchComponent implements AfterViewInit {
-
   q: string;
 
   qIpt: HTMLInputElement;
@@ -32,7 +37,9 @@ export class HeaderSearchComponent implements AfterViewInit {
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit() {
-    this.qIpt = (this.el.nativeElement as HTMLElement).querySelector('.ant-input') as HTMLInputElement;
+    this.qIpt = (this.el.nativeElement as HTMLElement).querySelector(
+      '.ant-input',
+    ) as HTMLInputElement;
   }
 
   qFocus() {
