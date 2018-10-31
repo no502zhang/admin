@@ -16,9 +16,20 @@ export const SIDEBAR_MENUS: Menu[] = [
         ]
     },
     {
-        id: "7", parentId: null, type: "sidebar", name: "订单", iconType: "dollar", link: null, children: [
+        id: "2", parentId: null, type: "sidebar", name: "项目管理", iconType: "setting", link: null, children: [
+            { id: "3", parentId: "2", type: "sidebar", name: "需求管理", iconType: null, link: null, children: null },
+            { id: "3", parentId: "2", type: "sidebar", name: "计划管理", iconType: null, link: null, children: null },
+        ]
+    },
+    {
+        id: "7", parentId: null, type: "sidebar", name: "订单管理", iconType: "dollar", link: null, children: [
             { id: "8", parentId: "7", type: "sidebar", name: "订单配置", iconType: null, link: null, children: null },
-            { id: "9", parentId: "7", type: "sidebar", name: "订单管理", iconType: null, link: null, children: null },
+            { id: "9", parentId: "7", type: "sidebar", name: "订单列表", iconType: null, link: "/orders/order-list", children: null },
+        ]
+    },
+    {
+        id: "7", parentId: null, type: "sidebar", name: "用户管理", iconType: "team", link: null, children: [
+            { id: "9", parentId: "7", type: "sidebar", name: "用户列表", iconType: null, link: "/users/user-list", children: null },
         ]
     },
 ]
