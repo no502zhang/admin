@@ -4,13 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
-import { registerLocaleData } from '@angular/common';
-import zh from '@angular/common/locales/zh';
-
-registerLocaleData(zh);
-
-import { MessagesComponent } from './messages/messages.component';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
@@ -18,10 +12,18 @@ import { MessagesComponent } from './messages/messages.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    NgZorroAntdModule.forRoot()
+
+    NgZorroAntdModule,
   ],
-  declarations: [MessagesComponent],
-  exports: [MessagesComponent, CommonModule, FormsModule, ReactiveFormsModule, RouterModule, HttpClientModule, NgZorroAntdModule],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }]
+  declarations: [],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    HttpClientModule,
+
+    NgZorroAntdModule,
+  ]
 })
 export class SharedModule { }

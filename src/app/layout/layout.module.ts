@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
 
-import { DefaultLayoutComponent } from './default-layout/default-layout.component';
+import { LayoutDefaultComponent } from './default/layout-default.component';
+import { LayoutFullscreenComponent } from './fullscreen/layout-fullscreen.component';
 
 @NgModule({
   imports: [
     SharedModule
   ],
-  declarations: [DefaultLayoutComponent],
-  exports: [DefaultLayoutComponent]
+  declarations: [LayoutDefaultComponent, LayoutFullscreenComponent,]
 })
 export class LayoutModule { }

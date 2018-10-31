@@ -3,11 +3,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from './shared/shared.module';
+
+import { AppRoutingModule } from './app-routing.module';
+
 import { LayoutModule } from './layout/layout.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+
+import { NZ_I18N, zh_CN } from 'ng-zorro-antd';
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
+
+registerLocaleData(zh);
 
 @NgModule({
   declarations: [
@@ -17,11 +24,10 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
+    AppRoutingModule,
     LayoutModule,
-    DashboardModule,
-    AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

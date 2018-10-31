@@ -1,0 +1,70 @@
+<nz-layout>
+  <nz-header style="padding: 0;">
+    <div class="logo pull-left"></div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" class="pull-left" style="line-height: 64px;">
+      <ng-container [ngSwitch]="menu.children != null && menu.children.length > 0" *ngFor="let menu of headerMenus">
+        <li nz-submenu *ngSwitchCase="true" class="pull-left">
+          <span title>
+            <i nz-icon [type]="menu.iconType" *ngIf="menu.iconType != null"></i>
+            <span>{{menu.name}}</span>
+          </span>
+          <ul>
+            <li nz-menu-item *ngFor="let childrenMenu of menu.children">{{ childrenMenu.name }}</li>
+          </ul>
+        </li>
+        <li nz-menu-item *ngSwitchDefault class="pull-left">
+          <span title>
+            <i nz-icon [type]="menu.iconType" *ngIf="menu.iconType != null"></i>
+            <span>{{menu.name}}</span>
+          </span>
+        </li>
+      </ng-container>
+    </ul>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" class="pull-right" style="line-height: 64px;">
+      <li nz-submenu class="pull-right">
+        <span title>
+          <i nz-icon type="user"></i>
+          <span>管理员</span>
+        </span>
+        <ul>
+          <li nz-menu-item>账号信息</li>
+          <li nz-menu-item>退出</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-header>
+  <nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed">
+      <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed" style="min-height: calc(100vh - 64px);">
+        <ng-container [ngSwitch]="menu.children != null && menu.children.length > 0" *ngFor="let menu of sideMenus">
+          <li nz-submenu *ngSwitchCase="true">
+            <span title>
+              <i nz-icon [type]="menu.iconType"></i>
+              <span>{{menu.name}}</span>
+            </span>
+            <ul>
+              <ng-container [ngSwitch]="childrenMenu.children != null && childrenMenu.children.length > 0" *ngFor="let childrenMenu of menu.children">
+                <li nz-submenu *ngSwitchCase="true">
+                  <span title>{{ childrenMenu.name }}</span>
+                  <ul>
+                    <li nz-menu-item *ngFor="let thrMenu of childrenMenu.children">{{ thrMenu.name }}</li>
+                  </ul>
+                </li>
+                <li nz-menu-item *ngSwitchDefault>{{ childrenMenu.name }}</li>
+              </ng-container>
+            </ul>
+          </li>
+          <li nz-menu-item *ngSwitchDefault>
+            <span title>
+              <i nz-icon [type]="menu.iconType"></i>
+              <span>{{menu.name}}</span>
+            </span>
+          </li>
+        </ng-container>
+      </ul>
+    </nz-sider>
+    <nz-content style="min-height: calc(100vh - 64px);">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
