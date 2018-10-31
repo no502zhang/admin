@@ -2,7 +2,7 @@ import { Menu } from "src/app/core/menu.model";
 
 export const SIDEBAR_MENUS: Menu[] = [
     {
-        id: "1", parentId: null, type: "sidebar", name: "总览", iconType: "dashboard", link: null, children: null
+        id: "1", parentId: null, type: "sidebar", name: "总览", iconType: "dashboard", link: "/dashboard/default", children: null
     },
     {
         id: "2", parentId: null, type: "sidebar", name: "系统设置", iconType: "setting", link: null, children: [
