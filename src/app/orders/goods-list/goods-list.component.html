@@ -1,0 +1,16 @@
+<nz-table #basicTable [nzData]="goodsList" [nzTotal]="nzTotal">
+  <thead>
+    <tr>
+      <th>商品名称</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.name }}</td>
+      <td>
+        <a [routerLink]="['../goods-detail', data.id]">详情</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

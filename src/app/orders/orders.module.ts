@@ -10,6 +10,8 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 import { GetOrderStatusNamePipe } from './shared/get-order-status-name.pipe';
 import { FlowComponent } from './order-detail/flow/flow.component';
+import { GoodsListComponent } from './goods-list/goods-list.component';
+import { GoodsDetailComponent } from './goods-detail/goods-detail.component';
 
 @NgModule({
   imports: [
@@ -17,7 +19,7 @@ import { FlowComponent } from './order-detail/flow/flow.component';
     OrdersRoutingModule,
     PropertiesModule
   ],
-  declarations: [OrderListComponent, OrderDetailComponent, GetOrderStatusNamePipe, FlowComponent],
+  declarations: [OrderListComponent, OrderDetailComponent, GetOrderStatusNamePipe, FlowComponent, GoodsListComponent, GoodsDetailComponent],
   exports: [OrderListComponent, OrderDetailComponent]
 })
 export class OrdersModule { }

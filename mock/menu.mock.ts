@@ -25,6 +25,7 @@ export const SIDEBAR_MENUS: Menu[] = [
         id: "7", parentId: null, type: "sidebar", name: "订单管理", iconType: "dollar", link: null, children: [
             { id: "8", parentId: "7", type: "sidebar", name: "订单配置", iconType: null, link: null, children: null },
             { id: "9", parentId: "7", type: "sidebar", name: "订单列表", iconType: null, link: "/orders/order-list", children: null },
+            { id: "10", parentId: "7", type: "sidebar", name: "商品列表", iconType: null, link: "/orders/goods-list", children: null },
         ]
     },
     {
