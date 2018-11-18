@@ -1,3 +1,26 @@
-<p>
-  goods-detail works!
-</p>
+<h2>商品管理</h2>
+<form nz-form [formGroup]="goodsForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name">商品名称</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="name">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="picUrl">商品图片地址</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="picUrl">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="remark">商品说明</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <textarea nz-input formControlName="remark"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary">保存</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

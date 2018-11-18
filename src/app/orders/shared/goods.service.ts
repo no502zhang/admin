@@ -12,7 +12,11 @@ export class GoodsService {
 
   constructor(private http: HttpClient) { }
 
-  getGoodsList(): Observable<Page> {
-    return this.http.get<Page>('/gateway/order/order/goods')
+  getGoodsList(pageNumber, pageSize): Observable<Page> {
+    return this.http.get<Page>('/gateway/order/order/goods', { params: { pageNumber: pageNumber, pageSize: pageSize } })
+  }
+
+  addGoods(goods: Goods): Observable<Goods> {
+    return this.http.post<Goods>('/gateway/order/order/goods', goods)
   }
 }
